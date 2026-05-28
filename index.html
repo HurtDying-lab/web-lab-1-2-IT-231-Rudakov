@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>BMW Dealership | Главная</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <div id="account_panel">
+        <div class="account_info">
+            <p class="phone">+7 (999) 000-00-00</p>
+            <p class="email">info@bmw-salon.ru</p>
+        </div>
+    </div>
+    <div id="menu">
+        <a href="index.html"><img src="img/bmw_logo.png" alt="BMW Logo" class="logo"></a>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li class="menu-item-dropdown">
+                <a href="catalog.html">Каталог ▾</a>
+                <ul class="submenu">
+                    <li><a href="catalog.html#sedany">Седаны</a></li>
+                    <li><a href="catalog.html#crossovery">Кроссоверы</a></li>
+                    <li><a href="catalog.html#m-seriya">М-серия</a></li>
+                </ul>
+            </li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+            <li><a href="about.html">О нас</a></li>
+        </ul>
+        <div id="live-clock"></div>
+    </div>
+    <div id="content">
+        <div id="welcome-banner">
+            <strong>Добро пожаловать!</strong> Сейчас действует акция на BMW X5. Звоните: +7 (999) 000-00-00
+        </div>
+        <script>
+            // скрывает банеры через 5 сек
+            window.addEventListener('load', function () {
+                setTimeout(function () {
+                    var b = document.getElementById('welcome-banner');
+                    if (b) { b.style.opacity = '0'; }
+                }, 5000);
+            });
+        </script>
+        <h1>Добро пожаловать в BMW</h1>
+
+        <!-- Слайдер баннеров -->
+        <div class="banner-slider-container">
+            <div class="banner-slider">
+                <!-- Баннер 1 -->
+                <div class="banner-slide active">
+                    <div class="banner-content" style="background: linear-gradient(135deg, #0066B1 0%, #004c82 100%);">
+                        <h2>Премиум сервис BMW</h2>
+                        <p>Полное обслуживание вашего автомобиля от официального дилера</p>
+                        <div class="banner-blocks">
+                            <div class="banner-block">
+                                <div class="block-icon">🔧</div>
+                                <div class="block-title">Техническое обслуживание</div>
+                                <p class="block-text" data-block-id="1-1">Профессиональное обслуживание и диагностика
+                                </p>
+                            </div>
+                            <div class="banner-block">
+                                <div class="block-icon">🛡️</div>
+                                <div class="block-title">Гарантия</div>
+                                <p class="block-text" data-block-id="1-2">Официальная гарантия на все работы</p>
+                            </div>
+                            <div class="banner-block">
+                                <div class="block-icon">⚡</div>
+                                <div class="block-title">Быстрое обслуживание</div>
+                                <p class="block-text" data-block-id="1-3">Без очередей и задержек</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Баннер 2 -->
+                <div class="banner-slide">
+                    <div class="banner-content" style="background: linear-gradient(135deg, #1c1c1c 0%, #333 100%);">
+                        <h2>Финансовые условия</h2>
+                        <p>Удобные программы кредитования и лизинга</p>
+                        <div class="banner-blocks">
+                            <div class="banner-block">
+                                <div class="block-icon">💳</div>
+                                <div class="block-title">Кредит 0%</div>
+                                <p class="block-text" data-block-id="2-1">Кредит под 0% в течение первого года</p>
+                            </div>
+                            <div class="banner-block">
+                                <div class="block-icon">📋</div>
+                                <div class="block-title">Быстрое одобрение</div>
+                                <p class="block-text" data-block-id="2-2">Решение за 2 часа</p>
+                            </div>
+                            <div class="banner-block">
+                                <div class="block-icon">🚗</div>
+                                <div class="block-title">Лизинг</div>
+                                <p class="block-text" data-block-id="2-3">Программы лизинга от 12 месяцев</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bullets (точки) навигации -->
+            <div class="banner-bullets">
+                <button class="bullet active" data-slide="0"></button>
+                <button class="bullet" data-slide="1"></button>
+            </div>
+
+            <!-- Навигация стрелками -->
+            <button class="banner-nav prev" id="banner-prev">❮</button>
+            <button class="banner-nav next" id="banner-next">❯</button>
+        </div>
+
+        <!-- Форма редактирования текстов баннеров -->
+        <div class="banner-editor-section">
+            <h2>Редактировать текст баннеров</h2>
+            <div class="banner-editor-form">
+                <div class="editor-group">
+                    <label>Баннер 1 - Блок 1:</label>
+                    <input type="text" class="editor-input" data-block-id="1-1" placeholder="Введите текст">
+                </div>
+                <div class="editor-group">
+                    <label>Баннер 1 - Блок 2:</label>
+                    <input type="text" class="editor-input" data-block-id="1-2" placeholder="Введите текст">
+                </div>
+                <div class="editor-group">
+                    <label>Баннер 1 - Блок 3:</label>
+                    <input type="text" class="editor-input" data-block-id="1-3" placeholder="Введите текст">
+                </div>
+                <div class="editor-group">
+                    <label>Баннер 2 - Блок 1:</label>
+                    <input type="text" class="editor-input" data-block-id="2-1" placeholder="Введите текст">
+                </div>
+                <div class="editor-group">
+                    <label>Баннер 2 - Блок 2:</label>
+                    <input type="text" class="editor-input" data-block-id="2-2" placeholder="Введите текст">
+                </div>
+                <div class="editor-group">
+                    <label>Баннер 2 - Блок 3:</label>
+                    <input type="text" class="editor-input" data-block-id="2-3" placeholder="Введите текст">
+                </div>
+                <button id="save-banner-texts" class="btn">Сохранить изменения</button>
+                <button id="reset-banner-texts" class="btn" style="background: #999; border-color: #999;">Сбросить на
+                    стандартные</button>
+            </div>
+        </div>
+
+        <p style="margin-top: 30px;">Официальный дилер. Почувствуйте удовольствие от вождения уже сегодня.</p>
+        <div class="car-cards">
+            <div class="car-card reveal-on-scroll" data-tooltip="Спортивный седан — икона M-серии">
+                <img src="img/bmw_m5.jpg" alt="BMW M5">
+                <h3>BMW M5 Competition</h3>
+                <p>Икона спортивного седана. Мощность и роскошь в каждом движении.</p>
+                <a href="catalog.html" class="btn">Подробнее</a>
+            </div>
+            <div class="car-card reveal-on-scroll" data-tooltip="Флагманский кроссовер BMW">
+                <img src="img/bmw_x5.jpg" alt="BMW X5">
+                <h3>BMW X5</h3>
+                <p>Лидер в классе SAV. Комфорт для всей семьи и проходимость вне дорог.</p>
+                <a href="catalog.html" class="btn">Подробнее</a>
+            </div>
+        </div>
+    </div>
+    <button id="scroll-top-btn" style="display:none;position:fixed;bottom:30px;right:30px;
+        padding:10px 16px;background:#0066B1;color:#fff;border:none;border-radius:4px;
+        cursor:pointer;font-size:18px;z-index:999;">&#8679;</button>
+    <footer id="footer">
+        <p>&copy; 2025 BMW Dealership. Все права защищены.</p>
+    </footer>
+</body>
+
+</html>

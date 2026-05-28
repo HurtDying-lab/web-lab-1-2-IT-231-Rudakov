@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>BMW Dealership | Контакты</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <div id="account_panel">
+        <div class="account_info"><p class="phone">+7 (999) 000-00-00</p></div>
+    </div>
+    <div id="menu">
+        <a href="index.html"><img src="img/bmw_logo.png" alt="BMW Logo" class="logo"></a>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li class="menu-item-dropdown">
+                <a href="catalog.html">Каталог ▾</a>
+                <ul class="submenu">
+                    <li><a href="catalog.html#sedany">Седаны</a></li>
+                    <li><a href="catalog.html#crossovery">Кроссоверы</a></li>
+                    <li><a href="catalog.html#m-seriya">М-серия</a></li>
+                </ul>
+            </li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+            <li><a href="about.html">О нас</a></li>
+        </ul>
+        <div id="live-clock"></div>
+    </div>
+    <div id="content">
+        <h1>Запись на тест-драйв</h1>
+        <div id="form-success"></div>
+        <div class="form_container">
+            <form id="test-drive-form" action="#" method="post" novalidate>
+                <label for="name">Ваше имя*</label>
+                <input type="text" id="name" name="name" placeholder="Иван Иванов">
+                <label for="phone">Телефон*</label>
+                <input type="text" id="phone" name="phone" placeholder="+7 (___) ___-__-__">
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" placeholder="example@mail.ru">
+                <label for="model">Интересующая модель</label>
+                <select id="model" name="model">
+                    <option value="3">BMW 3 Series</option>
+                    <option value="5">BMW 5 Series</option>
+                    <option value="7">BMW 7 Series</option>
+                    <option value="X3">BMW X3</option>
+                    <option value="X5">BMW X5</option>
+                    <option value="X7">BMW X7</option>
+                    <option value="M3">BMW M3</option>
+                    <option value="M5">BMW M5</option>
+                    <option value="M8">BMW M8</option>
+                </select>
+                <label for="date">Желаемая дата</label>
+                <input type="date" id="date" name="date">
+                <label for="comment">Комментарий</label>
+                <textarea id="comment" name="comment" rows="4" placeholder="Ваши пожелания (до 300 символов)"></textarea>
+                <span id="char-counter" style="font-size:13px;color:#555;">Осталось символов: 300</span>
+                <div class="form-submit">
+                    <button type="submit" class="btn">Отправить заявку</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <button id="scroll-top-btn" style="display:none;position:fixed;bottom:30px;right:30px;
+        padding:10px 16px;background:#0066B1;color:#fff;border:none;border-radius:4px;
+        cursor:pointer;font-size:18px;z-index:999;">&#8679;</button>
+    <footer id="footer"><p>&copy; 2025 BMW Dealership. Все права защищены.</p></footer>
+</body>
+</html>

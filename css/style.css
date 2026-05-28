@@ -1,0 +1,626 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Панель контактов */
+#account_panel {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: #1c1c1c;
+    color: #fff;    
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.account_info {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.account_info p {
+    margin: 0;
+}
+
+/* Левое фиксированное меню */
+#menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background: #1c1c1c;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    z-index: 500;
+}
+
+#menu img.logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto 30px auto;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#menu ul li {
+    margin-bottom: 15px;
+}
+
+#menu ul li a {
+    display: block;
+    background: #333;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 4px;
+    border-left: 4px solid #0066B1;
+    transition: 0.3s;
+}
+
+#menu ul li a:hover {
+    background: #0066B1;
+    padding-left: 20px;
+}
+
+/* Основной контент */
+#content {
+    position: relative;
+    z-index: 1;
+    margin-left: 260px;
+    padding: 60px 40px 40px 40px;
+    text-align: left;
+    max-width: none;
+    flex: 1;
+}
+
+h1 {
+    color: #1c1c1c;
+    border-bottom: 2px solid #0066B1;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+h2, h3 {
+    color: #444;
+}
+
+/* Карточки автомобилей */
+.car-card, .form_container {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+    margin: 20px 0;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Сетка карточек */
+.car-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.car-card {
+    width: 100%;
+    max-width: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.car-card img {
+    width: 100%;
+    border-radius: 4px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    background: #eee;
+}
+
+.car-card h3 {
+    margin-top: 15px;
+    margin-bottom: 0;
+    min-height: 48px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.car-card .specs {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+    flex-grow: 1;
+}
+
+.car-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 4px;
+    border: 2px solid #0066B1;
+    background: #0066B1;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #004c82;
+    border-color: #004c82;
+}
+
+/* Формы */
+.form_container {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+.form_container input, 
+.form_container textarea, 
+.form_container select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form_container label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #fff;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .car-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #menu {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    #content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    #account_panel {
+        position: relative;
+        right: 0;
+        top: 0;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+    .car-cards {
+        grid-template-columns: 1fr;
+    }
+    .car-card {
+        max-width: none;
+    }
+}
+
+/* Футер */
+#footer {
+    margin-left: 220px;
+    padding: 20px 40px;
+    background: #1c1c1c;
+    color: #aaa;
+    font-size: 13px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #footer {
+        margin-left: 0;
+    }
+}
+
+/* ЛР №2: Дополнительные стили */
+
+/* Выпадающее меню */
+.menu-item-dropdown { position: relative; }
+.submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: #2a2a2a;
+    min-width: 180px;
+    border-left: 4px solid #0066B1;
+    z-index: 9999;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+}
+.submenu li { margin: 0; }
+.submenu li a {
+    border-left: none;
+    font-size: 14px;
+    padding: 10px 14px;
+}
+
+/* Живые часы */
+#live-clock {
+    color: #0066B1;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+/* Ошибки формы */
+.field-error { 
+    color: #e00; 
+    font-size: 13px; 
+    margin: 2px 0 8px; 
+}
+
+#form-success {
+    display: none;
+    background: #e6ffe6;
+    border: 1px solid #0a0;
+    padding: 12px;
+    border-radius: 4px;
+    color: #060;
+    margin-bottom: 15px;
+}
+
+/* Анимация появления при скролле */
+.reveal-on-scroll { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: opacity 0.6s, transform 0.6s; 
+    z-index: 0; 
+}
+.reveal-on-scroll.revealed { 
+    opacity: 1; 
+    transform: translateY(0); 
+    z-index: 0; 
+}
+
+/* Баннер */
+#welcome-banner {
+    background: linear-gradient(90deg, #0066B1, #004c82);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    transition: opacity 1s;
+}
+
+/* Математический факт */
+#math-fact {
+    font-size: 13px;
+    color: #777;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+/* ================== СЛАЙДЕР БАННЕРОВ ================== */
+
+.banner-slider-container {
+    position: relative;
+    width: 100%;
+    margin: 30px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.banner-slider {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.banner-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    z-index: 1;
+}
+
+.banner-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.banner-content {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+.banner-content h2 {
+    margin: 0 0 15px 0;
+    font-size: 32px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.banner-content p {
+    margin: 0 0 30px 0;
+    font-size: 18px;
+    opacity: 0.95;
+}
+
+.banner-blocks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.banner-block {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.banner-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.block-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.block-title {
+    color: #1c1c1c;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.block-text {
+    color: #555;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Bullets (точки) */
+.banner-bullets {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.bullet {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+}
+
+.bullet.active {
+    background: #fff;
+    width: 16px;
+    height: 16px;
+}
+
+.bullet:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* Навигационные стрелки */
+.banner-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    padding: 15px 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+    border-radius: 4px;
+}
+
+.banner-nav:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.banner-nav.prev {
+    left: 20px;
+}
+
+.banner-nav.next {
+    right: 20px;
+}
+
+/* Форма редактирования */
+.banner-editor-section {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 30px;
+    border: 1px solid #ddd;
+}
+
+.banner-editor-section h2 {
+    margin-top: 0;
+    color: #1c1c1c;
+}
+
+.banner-editor-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.editor-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.editor-input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.editor-input:focus {
+    outline: none;
+    border-color: #0066B1;
+    box-shadow: 0 0 5px rgba(0, 102, 177, 0.3);
+}
+
+.banner-editor-form .btn {
+    grid-column: span 2;
+    margin-top: 10px;
+}
+
+#reset-banner-texts {
+    grid-column: 2;
+    background: #999;
+    border-color: #999;
+}
+
+#reset-banner-texts:hover {
+    background: #777;
+    border-color: #777;
+}
+
+/* Адаптивность слайдера */
+@media (max-width: 1024px) {
+    .banner-slider {
+        height: 350px;
+    }
+    
+    .banner-blocks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-slider {
+        height: 300px;
+    }
+    
+    .banner-content {
+        padding: 25px;
+    }
+    
+    .banner-content h2 {
+        font-size: 24px;
+    }
+    
+    .banner-content p {
+        font-size: 16px;
+    }
+    
+    .banner-blocks {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .banner-nav {
+        padding: 12px 16px;
+        font-size: 18px;
+    }
+    
+    .banner-bullets {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .banner-editor-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .banner-editor-form .btn,
+    #reset-banner-texts {
+        grid-column: 1;
+    }
+}
